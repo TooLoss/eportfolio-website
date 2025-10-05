@@ -12,6 +12,11 @@
     --text: #0A0A0A;
     --text-muted: #4B4B4B;
     --corner: #9F9F9F;
+    --responsive-title: clamp(1rem, 3vw, 3rem);
+    --responsive-subtitle: clamp(0.5rem, 3vw, 1.5rem);
+    --responsive-minitext: clamp(0.1rem, 3vw, 1rem);
+    --responsive-smallitem: clamp(0.1rem, 1.2vw, 1rem);
+    --responsive-mediumitem: clamp(1rem, 1.2vw, 1.5rem);
 }
 
 body {
@@ -24,20 +29,9 @@ body {
     background-color: var(--bg-1);
 }
 
-.hero-banner {
-    padding: 20% 18%;
-}
-
-.align-left {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 1rem;
-}
-
 h1 {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 3rem;
+    font-size: var(--responsive-title);
     color: var(--text);
     font-weight: bold;
 }
@@ -46,12 +40,44 @@ h2 {
     font-family: 'Anonymous Pro', monospace;
     font-weight: 400;
     font-style: normal;
-    font-size: 1.5rem;
+    font-size: var(--responsive-subtitle);
+}
+
+h3 {
+    font-family: 'Anonymous Pro';
+    font-weight: 400;
+    font-style: underline;
+    font-size: var(--responsive-minitext);
 }
 
 a {
     color: var(--main-color);
     text-decoration: none;
+}
+
+.hero-banner {
+    padding: 20% clamp(2%, 10%, 18%);
+}
+
+.align-left {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: .5rem;
+    margin-top: var(--responsive-smallitem)
+}
+
+.align-left-block{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: .5rem;
+    margin-top: var(--responsive-smallitem);
+}
+
+.align-top {
+    gap: 1rem
 }
 
 .progressive-underline {
@@ -97,4 +123,40 @@ a {
     100% {
         transform: rotate(0deg);
     }
+}
+
+.icon {
+    width: var(--responsive-minitext);
+}
+
+.graylink {
+    color: var(--text-muted);
+    text-decoration: underline;
+}
+
+#cta-button-blue {
+    background-color: var(--main-color);
+    color: var(--bg-1);
+}
+
+.cta-button {
+    border-radius: 20pt;
+    background-color: var(--bg-2);
+    display: inline-block;
+    margin-top: var(--responsive-mediumitem);
+    margin-right: var(--responsive-subtitle);
+    padding: var(--responsive-smallitem) var(--responsive-subtitle);
+    align-items: baseline;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: var(--responsive-minitext);
+    border: 1px solid var(--corner);
+    color: var(--text-muted);
+    font-weight: bold;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease; 
+}
+
+.cta-button:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
