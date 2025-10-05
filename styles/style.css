@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-1: #FAFAFA;
+    --bg-2: #FFFFFF;
+    --bg-3: #FFCE47;
+    --main-color: #3A43FB;
+    --text: #0A0A0A;
+    --text-muted: #4B4B4B;
+    --corner: #9F9F9F;
+}
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 1.6;
+    color: var(--text-muted);
+    background-color: var(--bg-1);
+}
+
+.hero-banner {
+    padding: 25% 18%;
+}
+
+.align-left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+h1 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 3rem;
+    color: var(--text);
+    font-weight: bold;
+}
+
+h2 {
+    font-family: 'Anonymous Pro', monospace;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5rem;
+}
+
+a {
+    color: var(--main-color);
+    text-decoration: none;
+}
+
+.progressive-underline {
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+}
+
+.progressive-underline::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--main-color);
+    transition: width 0.3s ease;
+}
+
+.progressive-underline:hover::after {
+    width: 100%;
+}
