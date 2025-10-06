@@ -8,9 +8,10 @@
     --bg-1: #FAFAFA;
     --bg-2: #FFFFFF;
     --bg-3: #FFCE47;
+    --bg-4: #cbcbcb;
     --main-color: #3A43FB;
     --text: #0A0A0A;
-    --text-muted: #4B4B4B;
+    --text-muted: #3e3e3e;
     --corner: #9F9F9F;
     --responsive-title: clamp(1rem, 3vw, 3rem);
     --responsive-subtitle: clamp(0.5rem, 3vw, 1.5rem);
@@ -46,7 +47,6 @@ h2 {
 h3 {
     font-family: 'Anonymous Pro';
     font-weight: 400;
-    font-style: underline;
     font-size: var(--responsive-minitext);
 }
 
@@ -55,8 +55,23 @@ a {
     text-decoration: none;
 }
 
+p {
+    text-indent: .7%;
+    margin-bottom: .5%;
+    font-size: var(--responsive-subtitle);
+}
+
+b {
+    font-weight: 900;
+}
+
 .hero-banner {
-    padding: 20% clamp(2%, 10%, 18%);
+    padding: 0 clamp(2%, 20%, 20%);
+    height: 90%;
+}
+
+header {
+    padding: 20% 0;
 }
 
 .align-left {
@@ -127,11 +142,11 @@ a {
 
 .icon {
     width: var(--responsive-minitext);
+    height: var(--responsive-minitext);
 }
 
 .graylink {
     color: var(--text-muted);
-    text-decoration: underline;
 }
 
 #cta-button-blue {
@@ -159,4 +174,40 @@ a {
 
 .cta-button:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.secondary-bg {
+    background-color: var(--bg-3);
+    height: 80%;
+    padding: 10% 0;
+}
+
+.new-section {
+    margin-bottom: 5%;
+}
+
+.tag-component {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    flex-direction: row;
+    padding: 0.5% 1%;
+    gap: 3%;
+    background-color: var(--bg-1);
+    border: 1px solid var(--bg-4);
+    border-radius: 4pt;
+    white-space: nowrap;
+    box-shadow: 1px 1px 2.5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease; 
+}
+
+.tag-component:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#tag-component-alt-color {
+    background-color: var(--text);
+    border: 1px solid var(--corner);
+    color: var(--bg-1);
 }
