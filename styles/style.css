@@ -7,7 +7,7 @@
 :root {
     --bg-1: #FAFAFA;
     --bg-2: #FFFFFF;
-    --bg-3: #FFCE47;
+    --bg-3: #ffc917;
     --bg-4: #cbcbcb;
     --main-color: #3A43FB;
     --text: #0A0A0A;
@@ -37,6 +37,11 @@ h1 {
     font-weight: bold;
 }
 
+.sub-h1 {
+    font-size: var(--responsive-subtitle);
+    height: 20pt;
+}
+
 h2 {
     font-family: 'Anonymous Pro', monospace;
     font-weight: 400;
@@ -58,11 +63,17 @@ a {
 p {
     text-indent: .7%;
     margin-bottom: .5%;
-    font-size: var(--responsive-subtitle);
+    font-size: var(--responsive-minitext);
 }
 
 b {
     font-weight: 900;
+}
+
+.preview-images {
+    margin: 2% 0;
+    border: 1px solid var(--corner);
+    border-radius: 4pt;
 }
 
 .hero-banner {
@@ -71,7 +82,7 @@ b {
 }
 
 header {
-    padding: 20% 0;
+    padding: 18% 0;
 }
 
 .align-left {
@@ -176,10 +187,13 @@ header {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.secondary-bg {
+.main-bg {
+    background-color: var(--bg-1);
+    padding: 7% 0;
+}
+
+#main-bg-alt-color {
     background-color: var(--bg-3);
-    height: 80%;
-    padding: 10% 0;
 }
 
 .new-section {
@@ -192,7 +206,7 @@ header {
     align-items: center;
     flex-direction: row;
     padding: 0.5% 1%;
-    gap: 3%;
+    gap: 7pt;
     background-color: var(--bg-1);
     border: 1px solid var(--bg-4);
     border-radius: 4pt;
@@ -202,12 +216,34 @@ header {
     transition: all 0.3s ease; 
 }
 
-.tag-component:hover {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-
 #tag-component-alt-color {
     background-color: var(--text);
     border: 1px solid var(--corner);
     color: var(--bg-1);
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.2);
+    border: 0px solid var(--bg-4);
+}
+
+.project-section {
+    background-color: var(--bg-2);
+    padding: 2%;
+    padding-top: 1%;
+    border-radius: 10pt;
+    border: 1px solid var(--corner);
+    box-shadow: 1px 1px 2.5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease; 
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.project-section:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.vertical-align {
+    display: flex;
+    flex-direction: column;
+    gap: 10pt;
 }
